@@ -32,7 +32,7 @@ dotenv.config();
 const database = new typeorm_1.DataSource({
     type: "postgres",
     host: process.env.HOST_DB,
-    port: process.env.PORT_DB,
+    port: process.env.PORT_DB ? parseInt(process.env.PORT_DB) : undefined,
     username: process.env.USER_NAME_DB,
     password: process.env.PASSWORD_DB,
     database: process.env.DATABASE_DB,
